@@ -1,0 +1,21 @@
+import nltk
+from nltk.corpus import wordnet
+import os
+import pyttsx3
+import speech_recognition as sr
+import sys 
+import subprocess 
+from subprocess import Popen
+import pyaudio
+
+assistant = pyttsx3.init()
+voices = assistant.getProperty('voices')
+assistant.setProperty('voice', voices[33].id)
+
+def speak(audio):
+   assistant.say(audio)
+   print(f": {audio}")
+   assistant.runAndWait()
+
+thislist = ["apple", "banana", "cherry"]
+speak(thislist)
